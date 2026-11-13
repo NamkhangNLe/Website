@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { profile, projects } from './data/content.js'
 
 const resumeHref = `${import.meta.env.BASE_URL}Namkhang_Le_Resume.pdf`
@@ -7,6 +7,8 @@ export default function App() {
   const [active, setActive] = useState(0)
   const [copied, setCopied] = useState('')
   const tabs = useRef([])
+  const copyTimer = useRef(null)
+  useEffect(() => () => clearTimeout(copyTimer.current), [])
   const current = projects[active]
 
   const onKey = (e) => {
@@ -30,7 +32,8 @@ export default function App() {
     } catch {
       setCopied('Copy unavailable here. Use the email link above.')
     }
-    setTimeout(() => setCopied(''), 3000)
+    clearTimeout(copyTimer.current)
+    copyTimer.current = setTimeout(() => setCopied(''), 3000)
   }
 
   return (
@@ -65,7 +68,7 @@ export default function App() {
               {projects.map((p, i) => (
                 <button
                   key={p.id}
-                  ref={(el) => (tabs.current[i] = el)}
+                  ref={(el) => { tabs.current[i] = el }}
                   role="tab"
                   id={`tab-${p.id}`}
                   aria-selected={active === i}
