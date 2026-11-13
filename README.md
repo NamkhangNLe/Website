@@ -1,41 +1,28 @@
-# Namkhang Le - Personal Portfolio
+# Namkhang Le - Website
 
-A macOS-inspired personal portfolio website built with React and Vite.
+Personal site: a single page with a short bio, three hackathon and side projects (DiagnoseMe, ScribbleTex, MorseTorch), and contact links. Built with React 19, Vite and Tailwind CSS 4. Fonts (Bricolage Grotesque, Geist Mono) are bundled via `@fontsource` under the SIL Open Font License 1.1.
 
-## 🌐 Live Demo
+## Live
 [namkhangnle.github.io/Website](https://namkhangnle.github.io/Website/)
 
-## ✨ Features
+The site is served from the `/Website/` subpath, so `vite.config.js` sets `base: '/Website/'`.
 
-- **macOS Desktop Interface** - Authentic macOS-style desktop with window management
-- **Interactive Dock** - Animated dock with app icons (Finder, Messages, Safari, GitHub)
-- **Messages App** - Learn about my background and experience
-- **Finder App** - Browse my projects (DiagnoseMe, ScribbleTex, MorseTorch)
-- **Resume** - Download my resume directly
+## Features
+- Projects as an accessible tab list: click, or use the Arrow, Home and End keys.
+- Copy-email button with a clear message if the browser blocks clipboard access.
+- Resume PDF, LinkedIn and GitHub links.
 
-## 🛠️ Tech Stack
-
-- React 19
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Lucide Icons
-
-## 🚀 Getting Started
-
+## Develop
 ```bash
-# Install dependencies
 npm install
-
-# Run locally
-npm run dev
-
-# Build for production
+npm run dev      # http://localhost:5173/Website/
 npm run build
+npm run preview
 ```
 
-## 📫 Contact
+Pushes to `main` build and deploy to GitHub Pages through `.github/workflows/deploy.yml`.
 
-- **LinkedIn**: [linkedin.com/in/namkhangnle](https://linkedin.com/in/namkhangnle)
-- **GitHub**: [github.com/namkhangnle](https://github.com/namkhangnle)
-- **Email**: NamkhangNLe@hotmail.com
+## Contact
+- LinkedIn: [linkedin.com/in/namkhangnle](https://linkedin.com/in/namkhangnle)
+- GitHub: [github.com/namkhangnle](https://github.com/namkhangnle)
+- Email: NamkhangNLe@hotmail.com
